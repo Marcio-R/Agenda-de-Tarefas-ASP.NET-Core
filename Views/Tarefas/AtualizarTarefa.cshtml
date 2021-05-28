@@ -1,0 +1,42 @@
+﻿@model Agenda.Models.Tarefas
+
+@{
+    ViewData["Title"] = "Atualizar Tarefa " + Model.Data;
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <text class="card-header">Atualizar tarefa na data @Model.Data</text>
+                <form asp-action="AtualizarTarefa">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label asp-for="Nome" class="control-label"></label>
+                            <input asp-for="Nome" class="form-control" />
+                            <span asp-validation-for="Nome" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Data" type="hidden" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Horario" class="control-label"></label>
+                            <input asp-for="Horario" class="form-control" />
+                            <span asp-validation-for="Horario" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="form-group">
+                            <input type="submit" value="Atualizar" class="btn btn-sm btn-outline-primary" /> &emsp;
+                            <a asp-action="Index" class="btn btn-sm btn-link">Voltar</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
